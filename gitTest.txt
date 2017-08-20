@@ -1,728 +1,363 @@
-һ��Spring Boot���ܣ�
-    ����Spring��֯�µ�һ����Դ����Ŀ,
-    �����������ٹ�����ҵ��SpringӦ�õĿ��,Ҳ���Գ�Ϊ΢���.
-    ������EJB: Jboss��WebLogic��WebSphere 
-    ������Spring(servlet����):  tomcat��jetty
-    ΢���Spring Boot: java -jar xx.jar��war
-
-    Լ����������
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> .theirs
+一、Spring Boot介绍：
+    它是Spring组织下的一个开源的项目,
+    它是用来快速构建企业级Spring应用的框架,也可以称为微框架.
+    重量级EJB: Jboss、WebLogic、WebSphere 
+    轻量级Spring(servlet容器):  tomcat、jetty
+    微框架Spring Boot: java -jar xx.jar、war
+
+    约定优于配置
+
+    Spring Boot主要特点：
+  -- 创建独立的Spring应用程序
+  -- 嵌入的Tomcat，无需部署WAR文件
+  -- 简化Maven配置
+  -- 自动配置Spring
+  -- 提供生产就绪型功能，如指标，健康检查和外部配置
+  -- 绝对没有代码生成和对XML没有要求配置
+
+二、Spring Boot下载:  
+    SpringBoot：1.5.6 (官方网站：http://spring.io/) 2017年7月27
+
+    SpringBoot参考文档：
+    http://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/
+
+    Maven：3.3.9 （官方声明Springboot 1.5.6版本需要Maven 3.2+）
+    Gradle：4.0.2 (官方网站https://gradle.org/)
+
+    
+三、Spring Boot入门示例：
+
+    1. 配置Maven本地仓库: E:\20170410(58期)\SpringBoot\仓库(SpringBoot).zip
+    
+    2. 创建Maven项目(jar)
+
+    3. 配置依赖关系:
+       <!-- 指定父级工程 -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+	</parent>
+
+	<!-- 配置SpringBoot的Web启动器(内嵌了tomcat、集成了SpringMVC) -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+	更改jdk版本：
+	<!-- 更改JDK版本 -->
+	<java.version>1.7</java.version>
+
+    4. 创建Spring Boot的启动类
+
+       @SpringBootApplication // 指明该类为启动类
+       public class Application {
+
+		public static void main(String[] args) {
+			/** 运行SpringBoot的应用  (第一种方式)*/
+			//SpringApplication.run(Application.class, args);
+			
+			
+			/** 运行SpringBoot的应用，去掉Banner横幅 (第二种方式)*/
+			SpringApplication springApplication = new SpringApplication(Application.class);
+			/** 设置Banner横幅的模式为关闭 */
+			springApplication.setBannerMode(Mode.OFF);
+			/** 运行 */
+			springApplication.run(args);
+		}
+       }
+
+      注解：
+      @SpringBootApplication：代表为SpringBoot应用的运行主类
+      @SpringBootApplication( // SpringBoot应用启动类		
+			scanBasePackages={"cn.itcast.springboot"})// 指定扫描的基础包
+
+      @Configuration： 用于定义一个配置类
+      @EnableAutoConfiguration ：Spring Boot会自动根据你jar 包的依赖来自动配置项目
+      @ComponentScan： 告诉Spring 哪个packages 的用注解标识的类会被spring自动扫描并且装入bean 容器。
+
+     读取属性文件:
+     -- src/main/resources/application.properties (默认就是application.properties)
+
+     第一种方式：
+        /** 定义Environment封装application.properties */
+	@Autowired
+	private Environment environment;
+
+	environment.getProperty("name");
+
+     第二种方式：
+        @Value("${name}")
+	private String name;
+	@Value("${url}")
+	private String url;
+
+    SpringBoot的热部署：
+      pom.xml：配置依赖
+
+        <!-- 配置devtools实现热部署 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+	</dependency>
+
+四、Spring Boot配置文件
+    application.properties
+    application.yml
+
+五、Spring Boot视图：
+    1. 静态资源html视图
+       SpringBoot默认有四个静态资源文件夹：
+     classpath:/static/
+     classpath:/public/
+     classpath:/resources/
+     classpath:/META-INF/resources/
+
+    2. Jsp视图(不推荐)
+       Maven创建项目(war)
+
+       第一步：在pom.xml配置依赖
+
+       a. servelt-api.jar、jsp-api.jar、el.jar
+
+       b. jstl.jar
+
+		 <!-- 配置servelt-api.jar、jsp-api.jar、el.jar -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<!-- 配置jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+       第二步：在application.propertis属性文件中配置视图解析器中的属性
+	# 配置视图前缀
+        spring.mvc.view.prefix=/WEB-INF/jsp/
+        # 配置视图后缀
+        spring.mvc.view.suffix=.jsp
+
+
+    3. FreeMarker视图
+
+六、Spring Boot整合：
+    
+    1. 整合MyBatis:
+
+       第一步：pom.xml
+       
+        a. 配置MyBatis的启动器
+
+	b. c3p0
+
+	c. mysql驱动
+
+	<!-- 配置MyBatis的启动器 -->
+	<dependency>
+		<groupId>org.mybatis.spring.boot</groupId>
+		<artifactId>mybatis-spring-boot-starter</artifactId>
+		<version>1.3.0</version>
+	</dependency>
+	<!-- c3p0 -->
+	<dependency>
+		<groupId>com.mchange</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>0.9.5.2</version>
+	</dependency>
+	<!-- mysql -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+	</dependency>
+       
+     第二步：在application.properties属性文件
+        # 配置数据源
+	spring.datasource.driverClassName=com.mysql.jdbc.Driver
+	spring.datasource.url=jdbc:mysql://localhost:3306/springboot_db
+	spring.datasource.username=root
+	spring.datasource.password=root
+	# 配置连接池
+	spring.datasource.type=com.mchange.v2.c3p0.ComboPooledDataSource
+    
+     第三步：写Notice实体类
+
+     第四步：写NoticeMapper数据访问接口
+        @Mapper // 加@Mapper注解，就会创建它的代理对象
+	public interface NoticeMapper {
+	
+        }
+     第五步：写NoticeService与NoticeServiceImpl
+        @Service
+	@Transactional
+	public class NoticeServiceImpl implements NoticeService {
+
+	}
+
+     配置MyBatis加载配置文件：
+     -- mybatis-config.xml
+     -- xxxMapper.xml
+
+     application.properties
+     # 配置mybatis需要属性
+     # 配置MyBatis的核心配置文件
+	mybatis.configLocation=classpath:mybatis-config.xml
+     # 配置类型别名包扫描
+	mybatis.typeAliasesPackage=cn.itcast.springboot.domain
+     # 配置SQL语句映射文件
+	mybatis.mapperLocations=classpath:mappers/**/*Mapper.xml
+
+  2. 整合c3p0:
+     
+     第一步：开发C3p0的数据源配置类
+        @Configuration
+	public class DataSourceConfiguration {
+		
+		@Bean("dataSource") // 定义一个Bean
+		@Primary // 主要首选的Bean
+		@ConfigurationProperties(prefix="spring.datasource.c3p0")
+		public DataSource getDataSource(){
+			return DataSourceBuilder.create()
+					.type(ComboPooledDataSource.class).build();
+		}
+	}
+    第二步：application.properties:
+        # 配置c3p0数据源
+	spring.datasource.c3p0.driverClass=com.mysql.jdbc.Driver
+	spring.datasource.c3p0.jdbcUrl=jdbc:mysql://localhost:3306/springboot_db
+	spring.datasource.c3p0.user=root
+	spring.datasource.c3p0.password=root
+	spring.datasource.c3p0.maxPoolSize=20
+	spring.datasource.c3p0.minPoolSize=5
+	spring.datasource.c3p0.initialPoolSize=5
+
+    3. 整合Spring-Data-JPA:
+       
+       第一步：在pom.xml配置依赖
+          a. 配置Spring-Data-JPA启动器
+
+		<!-- 配置data-jpa启动器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- c3p0 -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.2</version>
+		</dependency>
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+	第二步：application.properties
+		# 配置数据源
+		spring.datasource.driverClassName=com.mysql.jdbc.Driver
+		spring.datasource.url=jdbc:mysql://localhost:3306/springboot_db
+		spring.datasource.username=root
+		spring.datasource.password=root
+		# 配置连接池
+		spring.datasource.type=com.mchange.v2.c3p0.ComboPooledDataSource
+
+	
+                # jpa配置
+		spring.jpa.showSql=true
+		spring.jpa.properties.hibernate.format_sql=true
+
+        第三步: NoticeDao
+                @Repository
+		public interface NoticeDao extends JpaRepository<Notice, Long> {
+			
+		}
+
+     4. 整合Junit:
+        
+	第一步：在pom.xml中加入依赖
+	        <!-- 配置junit启动器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+
+	第二步：测试类
+		@RunWith(SpringJUnit4ClassRunner.class) // 运行的主类
+		@SpringBootTest(classes=Application.class) // 设置启动类
+		public class NoticeTest {
+			
+			@Autowired
+			private NoticeService noticeService;
+			
+			/** 查询所有的公告 */
+			@Test
+			public void findAll(){
+				System.out.println(noticeService.findAll());
+			}
+		}
+
+七、Spring Boot部署：
+    1. 打jar包(内嵌的tomcat)
+
+       第一步：在pom.xml配置spring-boot的插件
+
+         <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+      第二步：执行package
+
+      第三步：java -jar xxx.jar
+         
+
+    2. 打war包(用自己的tomcat)
+        第一步：在pom.xml配置spring-boot的插件
+
+          <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	 </build>
+
+       第二步：在pom.xml文件中指定打包方式
+         <packaging>war</packaging>
+		<!-- 配置tomcat启动器(tomcat我们自己提供) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+       第三步： 定义ServletInitializer作为web.xml用
+          /** 定义ServletInitializer作为web.xml用 */
+	  public class ServletInitializer extends SpringBootServletInitializer {
+		@Override
+		protected SpringApplicationBuilder configure(
+				SpringApplicationBuilder builder) {
+			/** 设置SpringBoot的启动类 */
+			builder.sources(Application.class); 
+			/** 设置Banner模式 */
+			builder.bannerMode(Mode.OFF);
+			/** 返回Spring应用的构建对象 */
+			return builder;
+		}
+	 }
+
+     第四步：执行package
+
+     第五步：把war包拷贝到tomcat中运行
+
+
+       
